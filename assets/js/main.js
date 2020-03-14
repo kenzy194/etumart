@@ -145,33 +145,36 @@ a(document).ready(function(){
     });
 
 	a(".cms-carousel").each(function(){a(this).find("> .vc_row-full-width").remove();
-	a(document).on("change","#k2_select_color",function (e) {
-	    e.preventDefault();
-	    console.log(a(this).val());
-        console.log("1233");
-        // $.ajax({
-        //     url: kpa_datas.url,
-        //     type: 'POST',
-        //     beforeSend: function () {
-        //     },
-        //     data: {
-        //         action: 'kpa_ubuy_sync',
-        //         urls: _urls
-        //     }
-        // })
-        //     .done(function (data) {
-        //         if (data.stt === 'done') {
-        //
-        //         }
-        //     })
-        //     .fail(function () {
-        //         return false;
-        //     })
-        //     .always(function () {
-        //         _ok = true;
-        //         return false;
-        //     });
-    });
+        a(document).find("#k2_select_color").on('change', function() {
+            console.log("2222");
+        });
+	// a(document).on("change","#k2_select_color",function (e) {
+	//     e.preventDefault();
+	//     console.log(a(this).val());
+    //     console.log("1233");
+    //     // $.ajax({
+    //     //     url: kpa_datas.url,
+    //     //     type: 'POST',
+    //     //     beforeSend: function () {
+    //     //     },
+    //     //     data: {
+    //     //         action: 'kpa_ubuy_sync',
+    //     //         urls: _urls
+    //     //     }
+    //     // })
+    //     //     .done(function (data) {
+    //     //         if (data.stt === 'done') {
+    //     //
+    //     //         }
+    //     //     })
+    //     //     .fail(function () {
+    //     //         return false;
+    //     //     })
+    //     //     .always(function () {
+    //     //         _ok = true;
+    //     //         return false;
+    //     //     });
+    // });
 
 a(this).owlCarousel({margin:parseInt(a(this).attr("data-margin")),lazyLoad: 1,loop:"true"===a(this).attr("data-loop")?!0:!1,nav:"true"===a(this).attr("data-nav")?!0:!1,navText:['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],dots:"true"===a(this).attr("data-dots")?!0:!1,autoplay:"false"===a(this).attr("data-autoplay")?!1:a(this).attr("data-autoplay"),responsive:{0:{items:parseInt(a(this).attr("data-xsmall-items"))},768:{items:parseInt(a(this).attr("data-small-items"))},992:{items:parseInt(a(this).attr("data-medium-items"))},
 1200:{items:parseInt(a(this).attr("data-large-items"))}}})})
