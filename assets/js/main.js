@@ -145,29 +145,34 @@
         });
         a(document).on("change","#k2_select_color",function (e) {
             e.preventDefault();
-            console.log(a(this).val());
-            // $.ajax({
-            //     url: kpa_datas.url,
-            //     type: 'POST',
-            //     beforeSend: function () {
-            //     },
-            //     data: {
-            //         action: 'kpa_ubuy_sync',
-            //         urls: _urls
-            //     }
-            // })
-            //     .done(function (data) {
-            //         if (data.stt === 'done') {
-            //
-            //         }
-            //     })
-            //     .fail(function () {
-            //         return false;
-            //     })
-            //     .always(function () {
-            //         _ok = true;
-            //         return false;
-            //     });
+            var _u = a(this).attr("data-url");
+            $.ajax({
+                url: _u,
+                type: 'GET',
+                beforeSend: function () {
+                },
+                data: {
+                    action: 'kpa_ubuy_sync',
+                    urls: _urls
+                }
+            })
+                .done(function (data) {
+                    console.log(data);
+                    // var items = $(data).find('#' + html_id + ' .cms-grid-masonry > .grid-item');
+                    // var time = 0.4;
+                    // items.each(function () {
+                    //     $(this).addClass('cms-animated');
+                    //     $(this).find('.grid-item-inner').css('animation-duration', time + 's');
+                    //     time = time + 0.15;
+                    // });
+                    // $('#' + html_id).children('.cms-grid-masonry').append(items);
+                })
+                .fail(function () {
+                    return false;
+                })
+                .always(function () {
+                    return false;
+                });
         });
 
         a(".cms-carousel").each(function(){a(this).find("> .vc_row-full-width").remove();
