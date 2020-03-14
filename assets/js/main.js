@@ -146,7 +146,6 @@
         a(document).on("change","#k2_select_color",function (e) {
             e.preventDefault();
             console.log(a(this).val());
-            console.log("1233");
             // $.ajax({
             //     url: kpa_datas.url,
             //     type: 'POST',

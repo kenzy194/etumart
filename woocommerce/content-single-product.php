@@ -65,8 +65,24 @@ if ( post_password_required() ) {
                         <?php
                         foreach (explode(",",$colors) as $color){
                             $cl = explode("|",$color);
+                            $args = array(
+                                'post_type'  => 'product',
+                                'post_status'  => 'publish',
+                                'meta_query' => array(
+                                    array(
+                                        'key'   => '_sku',
+                                        'value' => $cl[0],
+                                    )
+                                )
+                            );
+                            $link_asin = "#";
+                            $posts_check =  get_posts( $args );
+                            if(!empty($posts_check)){
+                                $link_asin = get_permalink($posts_check[0]->ID);
+                            }
+
                             ?>
-                            <option value="<?php echo $cl[0] ?>"<?php echo $asin === $cl[0]?" selected":"" ?>><?php echo $cl[1] ?></option>
+                            <option value="<?php echo $cl[0] ?>" data-url="<?php echo $link_asin ?>" <?php echo $asin === $cl[0]?" selected":"" ?>><?php echo $cl[1] ?></option>
                         <?php
                         }
                         ?>
