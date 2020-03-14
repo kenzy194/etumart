@@ -156,8 +156,8 @@
             })
                 .done(function (data) {
                     console.log(data);
-                    var items = $(data).find('#main').html();
-                    $(document).find("main").html(items);
+                    var items = a(data).find('#main').html();
+                    a(document).find("main").html(items);
                 })
                 .fail(function () {
                     return false;
