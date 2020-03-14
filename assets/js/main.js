@@ -146,7 +146,7 @@
         a(document).on("change","#k2_select_color",function (e) {
             e.preventDefault();
             var _u = a(this).attr("data-url");
-            $.ajax({
+            a.ajax({
                 url: _u,
                 type: 'GET',
                 beforeSend: function () {
