@@ -55,23 +55,21 @@ if ( post_password_required() ) {
 			echo "<p class='sku-it'>item#: <span>". $product->get_sku()."</span></p>";
 
 			woocommerce_template_single_price();
+			$colors = get_post_meta($product->get_id(),"_product_color",true);
+			$asin = get_post_meta($product->get_id(),"_sku",true);
 			?>
             <div id="k2-product-colors" class="k2-product-options">
                 <label for="k2_select_color">
-                    <?php
-                    echo "<pre>";
-                    var_dump($product);
-                    echo "</pre>";die("123"); ?>
                     <span>Color</span>
                     <select class="input-select" id="k2_select_color" name="k2_select_color">
-                        <option value="Black" asin="B01HGM33HG" selected="selected">
-                            Black                    </option>
-                        <option value="Blue" asin="B01LMVIS18">
-                            Blue                    </option>
-                        <option value="Silver" asin="B01LMVITSA">
-                            Silver                    </option>
-                        <option value="Yellow" asin="B07DL7HNPG">
-                            Yellow                    </option>
+                        <?php
+                        foreach (explode(",",$colors) as $color){
+                            $cl = explode("|",$color);
+                            ?>
+                            <option value="<?php echo $cl[0] ?>"<?php echo $asin === $cl[0]?" selected":"" ?>><?php echo $cl[1] ?></option>
+                        <?php
+                        }
+                        ?>
                     </select>
                 </label>
             </div>
