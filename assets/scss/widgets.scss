@@ -1,0 +1,47 @@
+
+.list-noi-that,.list-cat-noi-that {
+	background-color: rgba(0, 0, 0, .05);
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+
+    .proj_r_title {
+	    width: 100%;
+	    color: #559209;
+	    text-transform: uppercase;
+	    margin-bottom: 10px;
+	    font-weight: bold;
+	    font-size: 20px;
+	    border-bottom: 1px dashed #558914;
+	    padding-bottom: 10px;
+	}
+
+	li {
+		padding: 6px 0;
+	    margin: 0 0 6px;
+		list-style: none;
+	    border-bottom: 1px solid rgba(0, 0, 0, .12);
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	a {
+		color: #0E2D5F;
+		position: relative;
+		font-size: 17px;
+
+		&:before {
+			font: normal normal normal 18px/1 FontAwesome;
+			content: "\f101";
+			margin-right: 5px;
+		}
+
+		&:hover {
+			color: #000;
+		}
+	}
+}
