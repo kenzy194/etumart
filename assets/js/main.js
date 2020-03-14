@@ -152,8 +152,6 @@
                 beforeSend: function () {
                 },
                 data: {
-                    action: 'kpa_ubuy_sync',
-                    urls: _urls
                 }
             })
                 .done(function (data) {
