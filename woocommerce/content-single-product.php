@@ -61,7 +61,7 @@ if ( post_password_required() ) {
                     <?php
                     echo "<pre>";
                     var_dump($product);
-                    echo "</pre>";die; ?>
+                    echo "</pre>"; ?>
                     <span>Color</span>
                     <select class="input-select" id="k2_select_color" name="k2_select_color">
                         <option value="Black" asin="B01HGM33HG" selected="selected">
