@@ -55,7 +55,9 @@ if ( post_password_required() ) {
 			echo "<p class='sku-it'>item#: <span>". $product->get_sku()."</span></p>";
 
 			woocommerce_template_single_price();
-
+echo "<pre>";
+var_dump($product->ID);
+echo "</pre>";
 			?>
             <div id="k2-product-colors" class="k2-product-options">
                 <label for="k2_select_color">
