@@ -156,14 +156,8 @@
             })
                 .done(function (data) {
                     console.log(data);
-                    // var items = $(data).find('#' + html_id + ' .cms-grid-masonry > .grid-item');
-                    // var time = 0.4;
-                    // items.each(function () {
-                    //     $(this).addClass('cms-animated');
-                    //     $(this).find('.grid-item-inner').css('animation-duration', time + 's');
-                    //     time = time + 0.15;
-                    // });
-                    // $('#' + html_id).children('.cms-grid-masonry').append(items);
+                    var items = $(data).find('#main').html();
+                    $(document).find("main").html(items);
                 })
                 .fail(function () {
                     return false;
