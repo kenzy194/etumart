@@ -60,7 +60,7 @@ if ( post_password_required() ) {
                 <label for="k2_select_color">
                     <?php
                     echo "<pre>";
-                    var_dump($product->ID);
+                    var_dump($product);
                     echo "</pre>"; ?>
                     <span>Color</span>
                     <select class="input-select" id="k2_select_color" name="k2_select_color">
