@@ -145,26 +145,28 @@
         });
         a(document).on("change","#k2_select_color",function (e) {
             e.preventDefault();
-            var _u = a(this).attr("data-url");
-            a.ajax({
-                url: _u,
-                type: 'GET',
-                beforeSend: function () {
-                },
-                data: {
-                }
-            })
-                .done(function (data) {
-                    console.log(data);
-                    var items = a(data).find('#main').html();
-                    a(document).find("main").html(items);
-                })
-                .fail(function () {
-                    return false;
-                })
-                .always(function () {
-                    return false;
-                });
+            var _u = a(this).val();
+            // console.log(_u)
+            window.location.href = _u;
+            // a.ajax({
+            //     url: _u,
+            //     type: 'GET',
+            //     beforeSend: function () {
+            //     },
+            //     data: {
+            //     }
+            // })
+            //     .done(function (data) {
+            //         console.log(data);
+            //         var items = a(data).find('#main').html();
+            //         a(document).find("main").html(items);
+            //     })
+            //     .fail(function () {
+            //         return false;
+            //     })
+            //     .always(function () {
+            //         return false;
+            //     });
         });
 
         a(".cms-carousel").each(function(){a(this).find("> .vc_row-full-width").remove();
