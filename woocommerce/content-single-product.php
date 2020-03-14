@@ -57,10 +57,20 @@ if ( post_password_required() ) {
 			woocommerce_template_single_price();
 
 			?>
-            <div class="k2-product-colors">
-                <select class="k2-prd-color-select" id="k2-prd-color-select">
-                    <option value="">xxx</option>
-                </select>
+            <div id="k2-product-colors" class="k2-product-options">
+                <label for="k2_select_color">
+                    <span>Color</span>
+                    <select class="input-select" id="k2_select_color" name="k2_select_color">
+                        <option value="Black" asin="B01HGM33HG" selected="selected">
+                            Black                    </option>
+                        <option value="Blue" asin="B01LMVIS18">
+                            Blue                    </option>
+                        <option value="Silver" asin="B01LMVITSA">
+                            Silver                    </option>
+                        <option value="Yellow" asin="B07DL7HNPG">
+                            Yellow                    </option>
+                    </select>
+                </label>
             </div>
 			<div class="prime-text">
             	<span>This product is not Fulfilled by Ubuy and can take minimum 10 days in delivery. We might cancel the product from the order and refund you if any issue arise with the delivery of this product.</span>
